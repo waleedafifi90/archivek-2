@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Co Headline W23 Arabic Light.ttf">
+            <string>CoHeadlineW23-ArabicLight</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyCellTableViewCell" id="KGk-i7-Jjw" customClass="emptyCellTableViewCell" customModule="archivek" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XZ1-2v-kC4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSz-wd-kbW" customClass="RectangularDashedView" customModule="archivek" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="5" width="320" height="48"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HPT-b2-k6c">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grayAttachmentIcom" translatesAutoresizingMaskIntoConstraints="NO" id="ryq-Zx-Vpx">
+                                                <rect key="frame" x="14.5" y="8.5" width="34" height="31"/>
+                                                <color key="tintColor" name="C5C5C5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ryq-Zx-Vpx" secondAttribute="height" multiplier="16.41:14.9" id="jKb-XH-Gpf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="يمكنك إضافة اكثر من ملف" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-Wh-4CK">
+                                                <rect key="frame" x="63.5" y="17" width="241.5" height="14"/>
+                                                <fontDescription key="fontDescription" name="CoHeadlineW23-ArabicLight" family="CoHeadlineW23-ArabicLight" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="14.6" bottom="8" trailing="15"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="HPT-b2-k6c" firstAttribute="top" secondItem="hSz-wd-kbW" secondAttribute="top" id="N1n-E5-WTK"/>
+                                    <constraint firstAttribute="trailing" secondItem="HPT-b2-k6c" secondAttribute="trailing" id="eRN-M3-Cof"/>
+                                    <constraint firstAttribute="bottom" secondItem="HPT-b2-k6c" secondAttribute="bottom" id="rKw-Ph-5II"/>
+                                    <constraint firstItem="HPT-b2-k6c" firstAttribute="leading" secondItem="hSz-wd-kbW" secondAttribute="leading" id="vxM-Ii-t1G"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="dashWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="dashLength">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                        <color key="value" name="C5C5C5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="betweenDashesSpace">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="5" leading="0.0" bottom="5" trailing="0.0"/>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="XZ1-2v-kC4" secondAttribute="trailing" id="081-5Z-FZ1"/>
+                    <constraint firstItem="XZ1-2v-kC4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nfl-4Y-hQu"/>
+                    <constraint firstItem="XZ1-2v-kC4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QYh-ID-L9w"/>
+                    <constraint firstAttribute="bottom" secondItem="XZ1-2v-kC4" secondAttribute="bottom" id="bub-K7-zXo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="139" y="120"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="grayAttachmentIcom" width="17" height="15"/>
+        <namedColor name="C5C5C5">
+            <color red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

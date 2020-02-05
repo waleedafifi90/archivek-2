@@ -1,0 +1,156 @@
+
+/* Class = "UILabel"; text = "التصنيف"; ObjectID = "1Fk-C6-N6j"; */
+"1Fk-C6-N6j.text" = "التصنيف";
+
+/* Class = "UITextField"; placeholder = "كلمة المرور"; ObjectID = "3gf-R2-jyY"; */
+"3gf-R2-jyY.placeholder" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "سري"; ObjectID = "3hH-Oj-YEG"; */
+"3hH-Oj-YEG.text" = "سري";
+
+/* Class = "UILabel"; text = "صيغة الملف"; ObjectID = "5BM-jo-1NG"; */
+"5BM-jo-1NG.text" = "صيغة الملف";
+
+/* Class = "UILabel"; text = "نوع  الملف"; ObjectID = "5eW-Ze-zzN"; */
+"5eW-Ze-zzN.text" = "نوع  الملف";
+
+/* Class = "UILabel"; text = "الفترة"; ObjectID = "5zv-AY-NFy"; */
+"5zv-AY-NFy.text" = "الفترة";
+
+/* Class = "UITextField"; placeholder = "البريد الالكروني"; ObjectID = "6AA-el-eWz"; */
+"6AA-el-eWz.placeholder" = "البريد الالكروني";
+
+/* Class = "UILabel"; text = "#0123184651"; ObjectID = "6Q7-tt-J01"; */
+"6Q7-tt-J01.text" = "#0123184651";
+
+/* Class = "UIViewController"; title = "تفاصيل الملف"; ObjectID = "7Zh-WW-grU"; */
+"7Zh-WW-grU.title" = "تفاصيل الملف";
+
+/* Class = "UILabel"; text = "خصوصية الملف"; ObjectID = "7pO-FR-4qI"; */
+"7pO-FR-4qI.text" = "خصوصية الملف";
+
+/* Class = "UILabel"; text = "مستند "; ObjectID = "9QC-NE-uab"; */
+"9QC-NE-uab.text" = "مستند ";
+
+/* Class = "UIButton"; normalTitle = "تسجيل الدخول"; ObjectID = "9dF-5H-BHu"; */
+"9dF-5H-BHu.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UILabel"; text = "حالة الملف"; ObjectID = "B9l-4p-7sN"; */
+"B9l-4p-7sN.text" = "حالة الملف";
+
+/* Class = "UILabel"; text = "فلترة البحث حسب"; ObjectID = "DRj-Kt-dts"; */
+"DRj-Kt-dts.text" = "فلترة البحث حسب";
+
+/* Class = "UILabel"; text = "12 MB"; ObjectID = "E6Q-rw-LY3"; */
+"E6Q-rw-LY3.text" = "12 MB";
+
+/* Class = "UILabel"; text = "تقرير اجتماع دوري مع شركة عزيز"; ObjectID = "ECG-lX-Boc"; */
+"ECG-lX-Boc.text" = "تقرير اجتماع دوري مع شركة عزيز";
+
+/* Class = "UILabel"; text = "المشروع"; ObjectID = "FSo-Z7-jaZ"; */
+"FSo-Z7-jaZ.text" = "المشروع";
+
+/* Class = "UIButton"; normalTitle = "نسيت كلمة المرور؟"; ObjectID = "KQP-Rh-0w4"; */
+"KQP-Rh-0w4.normalTitle" = "نسيت كلمة المرور؟";
+
+/* Class = "UILabel"; text = "من"; ObjectID = "Krw-fP-frm"; */
+"Krw-fP-frm.text" = "من";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "N16-9C-kRT"; */
+"N16-9C-kRT.title" = "Item";
+
+/* Class = "UILabel"; text = "رقم الملف المرجعي"; ObjectID = "OG0-Ge-NOq"; */
+"OG0-Ge-NOq.text" = "رقم الملف المرجعي";
+
+/* Class = "UILabel"; text = "الملفات المرفقة ٣"; ObjectID = "PIn-1r-nKK"; */
+"PIn-1r-nKK.text" = "الملفات المرفقة ٣";
+
+/* Class = "UINavigationItem"; title = "الملف الشخصي"; ObjectID = "PjU-ec-ASt"; */
+"PjU-ec-ASt.title" = "الملف الشخصي";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PlD-bx-qSe"; */
+"PlD-bx-qSe.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "PtW-jV-h6k"; */
+"PtW-jV-h6k.title" = "Item";
+
+/* Class = "UILabel"; text = "خاصة "; ObjectID = "S3d-G8-Xbj"; */
+"S3d-G8-Xbj.text" = "خاصة ";
+
+/* Class = "UILabel"; text = "نوع الملف"; ObjectID = "SDK-AI-QhN"; */
+"SDK-AI-QhN.text" = "نوع الملف";
+
+/* Class = "UILabel"; text = "من"; ObjectID = "Txf-Id-M2L"; */
+"Txf-Id-M2L.text" = "من";
+
+/* Class = "UIButton"; normalTitle = "حفظ التعديلات"; ObjectID = "UcL-Bx-7cV"; */
+"UcL-Bx-7cV.normalTitle" = "حفظ التعديلات";
+
+/* Class = "UILabel"; text = "متعدد"; ObjectID = "UjG-EZ-5aW"; */
+"UjG-EZ-5aW.text" = "متعدد";
+
+/* Class = "UIViewController"; title = "اضافة ملف"; ObjectID = "VCo-jP-0cS"; */
+"VCo-jP-0cS.title" = "اضافة ملف";
+
+/* Class = "UILabel"; text = "وصف الملف"; ObjectID = "Y8n-Pl-7vE"; */
+"Y8n-Pl-7vE.text" = "وصف الملف";
+
+/* Class = "UILabel"; text = "تطوير مكتبة الجميعة "; ObjectID = "aA5-hJ-K6g"; */
+"aA5-hJ-K6g.text" = "تطوير مكتبة الجميعة ";
+
+/* Class = "UITextField"; placeholder = "الاسم"; ObjectID = "bT3-6L-bwj"; */
+"bT3-6L-bwj.placeholder" = "الاسم";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "dOq-T6-IRH"; */
+"dOq-T6-IRH.title" = " ";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "eys-pP-iPR"; */
+"eys-pP-iPR.title" = " ";
+
+/* Class = "UITextField"; placeholder = "الاسم"; ObjectID = "fNU-R7-KMA"; */
+"fNU-R7-KMA.placeholder" = "الاسم";
+
+/* Class = "UILabel"; text = "حالة الملف"; ObjectID = "hou-w9-eg2"; */
+"hou-w9-eg2.text" = "حالة الملف";
+
+/* Class = "UITextField"; placeholder = "اسم الملف"; ObjectID = "hqF-n9-gwo"; */
+"hqF-n9-gwo.placeholder" = "اسم الملف";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ihq-Pi-J02"; */
+"ihq-Pi-J02.text" = "Label";
+
+/* Class = "UILabel"; text = "اسم الملف"; ObjectID = "jH8-08-1aM"; */
+"jH8-08-1aM.text" = "اسم الملف";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "jmH-tp-GaC"; */
+"jmH-tp-GaC.title" = " ";
+
+/* Class = "UIViewController"; title = "نتاج البحث"; ObjectID = "kKr-hU-UVG"; */
+"kKr-hU-UVG.title" = "نتاج البحث";
+
+/* Class = "UILabel"; text = "ادخل بيانات تسجيل الدخول"; ObjectID = "myq-OR-LC1"; */
+"myq-OR-LC1.text" = "ادخل بيانات تسجيل الدخول";
+
+/* Class = "UILabel"; text = "المشروع"; ObjectID = "nT7-vo-lNA"; */
+"nT7-vo-lNA.text" = "المشروع";
+
+/* Class = "UILabel"; text = "مرحبا بك"; ObjectID = "o84-Q2-xU9"; */
+"o84-Q2-xU9.text" = "مرحبا بك";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "oHq-kB-jr0"; */
+"oHq-kB-jr0.title" = " ";
+
+/* Class = "UILabel"; text = "لراحتكم وفرنا لكم إمكانية البحث داخل الملفات"; ObjectID = "pEW-4J-I1M"; */
+"pEW-4J-I1M.text" = "لراحتكم وفرنا لكم إمكانية البحث داخل الملفات";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "qqN-De-NlT"; */
+"qqN-De-NlT.title" = " ";
+
+/* Class = "UILabel"; text = "بحث"; ObjectID = "v3E-GE-ZPB"; */
+"v3E-GE-ZPB.text" = "بحث";
+
+/* Class = "UITextField"; placeholder = "الاسم"; ObjectID = "wCQ-uc-63i"; */
+"wCQ-uc-63i.placeholder" = "الاسم";
+
+/* Class = "UITextField"; placeholder = "الاسم"; ObjectID = "xfu-bl-agM"; */
+"xfu-bl-agM.placeholder" = "الاسم";
