@@ -10,11 +10,16 @@ import UIKit
 
 class fileDetailsTableViewCell: GeneralTableViewCell {
 
+    @IBOutlet weak var titleUILabel: UILabel!
+    @IBOutlet weak var subTitleUILabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override func configureCell() {
-        
+//        if let obj = Files.init(fromDictionary: self.object?.object as! [String: Any]) {
+            titleUILabel.text = "test"
+//        }
     }
 }

@@ -12,5 +12,6 @@ pod 'SwiftyJSON', '5.0'
 pod 'SVProgressHUD'
 pod 'Kingfisher'
 pod 'MBProgressHUD'
+pod 'ActionSheetPicker-3.0'
 
 end

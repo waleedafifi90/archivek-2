@@ -45,7 +45,7 @@ class GeneralCollectionView: UICollectionView {
     
     func loadCollection() {
         RequestBuilder.requestWithSuccessFullResponse(request: req) { (json) in
-            for item in json[self.req.responseName].arrayObject! {
+            for item in json[self.req.responseName].arrayValue {
                 self.objects.append(GeneralCollectionViewData(identifier: self.cellIdentifier, object: item, cellSize: self.cellSize))
             }
             self.reloadData()

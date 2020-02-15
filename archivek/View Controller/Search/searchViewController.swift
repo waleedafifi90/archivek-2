@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
 
 class searchViewController: UIViewController {
     
@@ -14,64 +15,133 @@ class searchViewController: UIViewController {
     @IBOutlet weak var fileNameUITextFiled: UITextField!
     @IBOutlet weak var toDateUILabel: UITextField!
     @IBOutlet weak var fromDateUILabel: UITextField!
+    @IBOutlet weak var categoryUILabel: UILabel!
+    @IBOutlet weak var projectUILabel: UILabel!
+    
     
     var params: [String: Any] = [:]
-
-    var objects: [Any] = []
+    var objects: [Constant] = []
+    var array: [Any] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     
     @IBAction func fromDateButtonPressed(_ sender: Any) {
-        let myDatePicker: UIDatePicker = UIDatePicker()
-        myDatePicker.datePickerMode = .date
-        myDatePicker.timeZone = NSTimeZone.local
-        myDatePicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
+        let datePicker = ActionSheetDatePicker(title: "من تاريخ",
+                                               datePickerMode: UIDatePicker.Mode.date,
+                                               selectedDate: Date(),
+                                               doneBlock: { picker, date, origin in
+                                                print("date = \(String(describing: date))")
+                                                self.params["dt_from_date"] = String(describing: date!)
+                                                self.fromDateUILabel.text = String(describing: date!).stringToDate().dateToString(customFormat: "Y-MM-dd")
+                                                return
+        },
+                                               cancel: { picker in
+                                                return
+        },
+                                               origin: (sender as AnyObject).superview?.superview)
 
-        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
-        alertController.view.addSubview(myDatePicker)
-        let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in self.params["dt_from_date"] = (myDatePicker.date.dateToString(customFormat: "Y-MM-dd")); self.fromDateUILabel.text = myDatePicker.date.dateToString(customFormat: "Y-MM-dd") } )
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
-        alertController.addAction(somethingAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion:{})
-
+        datePicker?.show()
+        
     }
     
     @IBAction func toDateButtonPressed(_ sender: Any) {
-        let myDatePicker: UIDatePicker = UIDatePicker()
-        myDatePicker.datePickerMode = .date
-        myDatePicker.timeZone = NSTimeZone.local
-        myDatePicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
+        let datePicker = ActionSheetDatePicker(title: "الى تاريخ",
+                                               datePickerMode: UIDatePicker.Mode.date,
+                                               selectedDate: Date(),
+                                               doneBlock: { picker, date, origin in
+                                                print("date = \(String(describing: date))")
+                                                self.params["dt_to_date"] = String(describing: date!)
+                                                self.toDateUILabel.text = String(describing: date!).stringToDate().dateToString(customFormat: "Y-MM-dd")
+                                                return
+        },
+                                               cancel: { picker in
+                                                return
+        },
+                                               origin: (sender as AnyObject).superview?.superview)
 
-        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.alert)
-        alertController.view.addSubview(myDatePicker)
-        let somethingAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in self.params["dt_to_date"] = (myDatePicker.date.dateToString(customFormat: "Y-MM-dd")); self.toDateUILabel.text = myDatePicker.date.dateToString(customFormat: "Y-MM-dd") } )
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
-        alertController.addAction(somethingAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion:{})
+        datePicker?.show()
+        
     }
     
     @IBAction func fileTypeButtonPressed(_ sender: Any) {
-        getFileType()
-        var actions: [(String, UIAlertAction.Style)] = []
+        getFileType(sKey: "FILE_TYPE")
+        array = []
+        for obj in objects {
+            array.append(obj.sValue!)
+        }
         
-        actions.append(("الغاء", UIAlertAction.Style.cancel))
-        
-        //self = ViewController
-        self.showActionsheet(viewController: self, title: "نوع الملف", message: "قم باختيار نوع الملف", actions: actions) { (index) in
-            self.fileTypeLabel.text = actions[index].0
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            ActionSheetStringPicker.show(withTitle: "اختر نوع الملف",
+                                         rows: self.array,
+                                         initialSelection: 1,
+                                         doneBlock: { picker, value, index in
+                                            //           print("picker = \(String(describing: picker))")
+                                            //           print("value = \(value)")
+                                            self.params["fk_i_type_id"] = self.objects[value].pkIId
+                                            self.fileTypeLabel.text = String(describing: index!)
+                                            return
+            },
+                                         cancel: { picker in
+                                            return
+            },
+                                         origin: sender)
+//        }
+    }
+    
+    @IBAction func projectButtonPressed(_ sender: Any) {
+        getFileType(sKey: "PROJECTS")
+        array = []
+        for obj in objects {
+            array.append(obj.sValue!)
+        }
+        DispatchQueue.main.async {
+            ActionSheetStringPicker.show(withTitle: "اختر مشروع ",
+                                         rows: self.array,
+                                         initialSelection: 1,
+                                         doneBlock: { picker, value, index in
+                                            //           print("picker = \(String(describing: picker))")
+                                            //           print("value = \(value)")
+                                            self.params["fk_i_project_id"] = self.objects[value].pkIId
+                                            self.projectUILabel.text = String(describing: index!)
+                                            return
+            },
+                                         cancel: { picker in
+                                            return
+            },
+                                         origin: sender)
         }
     }
     
+    @IBAction func categoryButtonPressed(_ sender: Any) {
+        getFileType(sKey: "FILE_TYPE")
+        array = []
+        for obj in objects {
+            array.append(obj.sValue!)
+        }
+        DispatchQueue.main.async {
+            ActionSheetStringPicker.show(withTitle: "اختر تصنيف",
+                                         rows: self.array,
+                                         initialSelection: 1,
+                                         doneBlock: { picker, value, index in
+                                            //           print("picker = \(String(describing: picker))")
+                                            //           print("value = \(value)")
+                                            self.params["fk_i_category_id"] = self.objects[value].pkIId
+                                            self.categoryUILabel.text = String(describing: index!)
+                                            return
+            },
+                                         cancel: { picker in
+                                            return
+            },
+                                         origin: sender)
+        }
+    }
+    
+    
     @IBAction func searchButtonPressed(_ sender: Any) {
         params["s_key"] = fileNameUITextFiled.text
-        
-        params["fk_i_type_id"] = ""
-        params["fk_i_project_id"] = ""
-        params["fk_i_category_id"] = ""
         let vc = UIStoryboard.mainStoryboard.instantiateViewController(withIdentifier: "searchResultViewController") as! searchResultViewController
         vc.params = params
         self.show(vc, sender: self)
@@ -79,18 +149,17 @@ class searchViewController: UIViewController {
 }
 
 extension searchViewController {
-    func getFileType() {
-        let parameters = ["s_key": "FILE_TYPE"]
+    func getFileType(sKey: String) {
+        array = []
+        let parameters = ["s_key": sKey]
         let request = ConstantRequest()
         request.parameters = parameters
         RequestBuilder.requestWithSuccessFullResponse(request: request.request(withParameters: parameters, withRequestType: .byid)) { (json) in
-            var array: [Any] = []
+            self.objects.removeAll()
             for item in json["constants"].array ?? [] {
                 let obj = Constant.init(fromJson: item)
-                array.append(obj)
+                self.objects.append(obj!)
             }
-            self.objects = array
-            
             debugPrint(self.objects)
         }
     }

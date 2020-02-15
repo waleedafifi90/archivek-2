@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.4.1)
   - Alamofire (5.0.0-rc.3)
   - IQKeyboardManagerSwift (6.5.4)
   - Kingfisher (5.12.0):
@@ -9,6 +10,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - Alamofire (~> 5.0.0-rc.2)
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ActionSheetPicker-3.0
     - Alamofire
     - IQKeyboardManagerSwift
     - Kingfisher
@@ -26,6 +29,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d236f0b663123e4b404a3bc04b338c1e805ac910
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
@@ -33,6 +37,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 8ad2d3babe3de93be5ffb16b5f49320aae62bd75
+PODFILE CHECKSUM: a3aea271d3483361d07ee1d7ab42d971ed0a1c9b
 
 COCOAPODS: 1.8.4

@@ -28,28 +28,28 @@ extension UIViewController {
     }
     
     func showErrorPopUp(title: String, message: String, buttonTitle1: String = "OK", buttonTitleStyle1: UIAlertAction.Style = .default, buttonAction1: @escaping (()->Void)) {
-         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
-         let button1 = UIAlertAction.init(title: buttonTitle1, style: buttonTitleStyle1) { (action) in
-             print("OK Button")
-             buttonAction1()
-         }
-
-         alert.addAction(button1)
-         self.present(alert, animated: true, completion: nil)
-     }
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let button1 = UIAlertAction.init(title: buttonTitle1, style: buttonTitleStyle1) { (action) in
+            print("OK Button")
+            buttonAction1()
+        }
+        
+        alert.addAction(button1)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func hideKeyboardWhenTappedAround() {
-         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-         tap.cancelsTouchesInView = false
-         view.addGestureRecognizer(tap)
-     }
-
-     @objc func dismissKeyboard() {
-         view.endEditing(true)
-     }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     func prefersLargTitle(withTitle title: String) {
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: K.General.loadingFontName, size: 20)!]
+        //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: K.General.loadingFontName, size: 20)!]
         let navigationItem = UINavigationItem()
         navigationItem.title = title
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -58,13 +58,13 @@ extension UIViewController {
     }
     
     func showActionsheet(viewController: UIViewController, title: String, message: String, actions: [(String, UIAlertAction.Style)], completion: @escaping (_ index: Int) -> Void) {
-    let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-    for (index, (title, style)) in actions.enumerated() {
-        let alertAction = UIAlertAction(title: title, style: style) { (_) in
-            completion(index)
+        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        for (index, (title, style)) in actions.enumerated() {
+            let alertAction = UIAlertAction(title: title, style: style) { (_) in
+                completion(index)
+            }
+            alertViewController.addAction(alertAction)
         }
-        alertViewController.addAction(alertAction)
-     }
-     viewController.present(alertViewController, animated: true, completion: nil)
+        viewController.present(alertViewController, animated: true, completion: nil)
     }
 }

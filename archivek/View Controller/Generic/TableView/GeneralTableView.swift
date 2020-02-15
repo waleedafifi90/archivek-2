@@ -11,22 +11,41 @@ import SwiftyJSON
 
 class GeneralTableView: UITableView {
     
-    private var identifier: String = ""
-    private var request: BaseRequest = BaseRequest()
-    var req: BaseRequest = BaseRequest()
-    typealias emptyClosuer = (() -> Void)
+    typealias emptyClouser = (() -> Void)
+    
     typealias jsonClouser = ((_ json: JSON) -> [Any])?
-    private var didFinish: emptyClosuer?
-    var cellIdentifier: String = ""
+    
     var objects: [GeneralTableViewData] = []
     
-    var generalRowHeight: CGFloat = 80
-    var emptyDataImage: UIImage? = UIImage()
-    var emptyDataTitle: String = ""
-    var emptyDataTitleFont: UIFont = .systemFont(ofSize: 14)
-    var emptyDataTitleColor: UIColor = .gray
+    var generalRowHeight: CGFloat = 100
+    
+    var EmptyDataImage: UIImage? = UIImage()
+    
+    var EmptyDataTitle: String = ""
+    
+    var EmptyDataTitleFont: UIFont = .systemFont(ofSize: 15)
+    
+    var EmptyDataTitleColor: UIColor = .gray
+    
     var isShowLoaderWhileRequest: Bool = false
+    
     var isShowErrorMessage: Bool = false
+    
+    private var identifier: String = ""
+    
+    private var request: BaseRequest = BaseRequest()
+    
+    var req: BaseRequest = BaseRequest()
+    
+    var cellIdentifier: String = ""
+    
+    var emptyDataImage: UIImage? = UIImage()
+    
+    var emptyDataTitle: String = ""
+    
+    var emptyDataTitleFont: UIFont = .systemFont(ofSize: 14)
+    
+    var emptyDataTitleColor: UIColor = .gray
     
     var pageNumber: Int = 1
     var totalPage: Int = 1
@@ -57,11 +76,11 @@ class GeneralTableView: UITableView {
         self.dataSource = self
     }
     
-    func didFinishRequest(_ didFinishParameter: emptyClosuer?) -> GeneralTableView {
+    private var didFinish: emptyClouser?
+    func didFinishRequest(_ didFinishParameter: emptyClouser?) -> GeneralTableView {
         self.didFinish = didFinishParameter
         return self
     }
-    
     
     @objc func pullToRefresh() {
         self.pageNumber = 1
@@ -82,19 +101,19 @@ extension GeneralTableView {
         return self
     }
     
-    func buildData(objs: [Any]?) {
-        for item in objs ?? [] {
-            self.objects.append(GeneralTableViewData(identifier: identifier, object: item, height: nil))
-        }
-        self.reloadData()
-        self.didFinish?()
-    }
-    
-    func buildRequest(jsonClouser: jsonClouser) -> GeneralTableView {
+    func buildRequest(jsonClouser: jsonClouser) -> GeneralTableView  {
         RequestBuilder.requestWithSuccessFullResponse(request: request, showLoader: isShowLoaderWhileRequest, showErrorMessage: isShowErrorMessage) { (json) in
             self.buildData(objs: jsonClouser?(json))
         }
         return self
+    }
+    
+    func buildData(objs: [Any]?) {
+        for item in objs ?? [] {
+            self.objects.append(GeneralTableViewData.init(identifier: self.identifier, object: item, height: nil))
+        }
+        self.reloadData()
+        self.didFinish?()
     }
     
     func registerNib(withIdentifier identifier: [String]) {
@@ -107,7 +126,7 @@ extension GeneralTableView {
         req.pageNo = self.pageNumber
         RequestBuilder.requestWithSuccessFullResponse(request: req) { (json) in
             self.totalPage = 1
-            for item in json[self.req.responseName].arrayObject! {
+            for item in json[self.req.responseName].arrayValue {
                 self.objects.append(GeneralTableViewData(identifier: self.cellIdentifier, object: item, height: nil))
             }
             self.reloadData()

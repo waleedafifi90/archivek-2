@@ -36,24 +36,41 @@ class RequestBuilder {
             self.showLoader(isShowLoader: true)
         }
         if request.files.count > 0 {
-            AF.upload(multipartFormData: { (multipart) in
+            AF.upload(multipartFormData: { (multi) in
                 for item in request.files {
                     if let data = item.data {
-                        multipart.append(data, withName: item.name ?? "Data", fileName: item.fileName, mimeType: item.type.rawValue)
+                        multi.append(data, withName: item.name ?? "data", fileName: item.fileName, mimeType: item.type.rawValue)
                     }
                 }
                 for (key, value) in request.parameters {
-                    if let data = (value as AnyObject).data(using: String.Encoding.utf8.rawValue) {
-                        multipart.append(data, withName: key)
+                    //                    if let data = (value as AnyObject).data(using: String.Encoding.utf8.rawValue) {
+                    //                        multi.append(data, withName: key)
+                    if let temp = value as? String {
+                        multi.append(temp.data(using: .utf8)!, withName: key)
                     }
+                    if let temp = value as? Int {
+                        multi.append("\(temp)".data(using: .utf8)!, withName: key)
+                    }
+                    if let temp = value as? NSArray {
+                        temp.forEach({ element in
+                            let keyObj = key + "[]"
+                            if let string = element as? String {
+                                multi.append(string.data(using: .utf8)!, withName: keyObj)
+                            } else
+                                if let num = element as? Int {
+                                    let value = "\(num)"
+                                    multi.append(value.data(using: .utf8)!, withName: keyObj)
+                            }
+                        })
+                    }//                    }
                 }
-            }, to: url, method: request.method, headers: headers, interceptor: nil) .uploadProgress { progress in
+            }, to: url, method: request.method, headers: self.headers, interceptor: nil).uploadProgress { (progress) in
                 self.showLoader(inProgress: progress.fractionCompleted)
-            }.responseData {response in
+            }.responseData { response in
                 ResponseHandler.responseHandler(response: response, showLoader: showLoader, request: request, url: url, success: success, failure: failure)
             }
         } else {
-            AF.request(url, method: request.method, parameters: request.parameters, headers: headers, interceptor: nil).validate().responseData {
+            AF.request(url, method: request.method, parameters: request.parameters, headers: self.headers, interceptor: nil).validate().responseData {
                 (response) in
                 ResponseHandler.responseHandler(response: response, showLoader: showLoader, request: request, url: url, success: success, failure: failure)
             }
@@ -92,5 +109,5 @@ class RequestBuilder {
         SVProgressHUD.setBackgroundColor(UIColor.white)
         SVProgressHUD.showProgress(Float(inProgress))
     }
-
+    
 }

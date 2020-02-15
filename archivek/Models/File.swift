@@ -38,6 +38,7 @@ class Files : NSObject, NSCoding{
     var sFileLogo : String?
     var sFileNumber : String?
     var sFilesCount : Int?
+    var iFilesCount : Int?
     var sImage : String?
     var sName : String?
     var sNotes : String?
@@ -76,6 +77,7 @@ class Files : NSObject, NSCoding{
         sFileLogo = dictionary["s_file_logo"] as? String
         sFileNumber = dictionary["s_file_number"] as? String
         sFilesCount = dictionary["s_files_count"] as? Int
+        iFilesCount = dictionary["i_files_count"] as? Int
         sImage = dictionary["s_image"] as? String
         sName = dictionary["s_name"] as? String
         sNotes = dictionary["s_notes"] as? String
@@ -168,6 +170,9 @@ class Files : NSObject, NSCoding{
         if sFilesCount != nil{
             dictionary["s_files_count"] = sFilesCount
         }
+        if iFilesCount != nil{
+            dictionary["i_files_count"] = iFilesCount
+        }
         if sImage != nil{
             dictionary["s_image"] = sImage
         }
@@ -222,6 +227,7 @@ class Files : NSObject, NSCoding{
         sFileLogo = aDecoder.decodeObject(forKey: "s_file_logo") as? String
         sFileNumber = aDecoder.decodeObject(forKey: "s_file_number") as? String
         sFilesCount = aDecoder.decodeObject(forKey: "s_files_count") as? Int
+        iFilesCount = aDecoder.decodeObject(forKey: "i_files_count") as? Int
         sImage = aDecoder.decodeObject(forKey: "s_image") as? String
         sName = aDecoder.decodeObject(forKey: "s_name") as? String
         sNotes = aDecoder.decodeObject(forKey: "s_notes") as? String
@@ -316,6 +322,9 @@ class Files : NSObject, NSCoding{
         }
         if sFilesCount != nil{
             aCoder.encode(sFilesCount, forKey: "s_files_count")
+        }
+        if iFilesCount != nil{
+            aCoder.encode(iFilesCount, forKey: "i_files_count")
         }
         if sImage != nil{
             aCoder.encode(sImage, forKey: "s_image")
